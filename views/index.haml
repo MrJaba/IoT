@@ -1,0 +1,19 @@
+%h2 Dashboard
+
+%table.vertical
+  %tr
+    %th  Server Port
+    %td= env['SERVER_PORT']
+  %tr
+    %th  Latency
+    %td= recent_latency
+  %tr
+    %th  Request took
+    %td= (Time.now.to_f - env[:start_time]).round(3)
+  %tr
+    %th  Connected Devices
+    %td= Device.all.count
+  %tr
+    %th  Data Collected
+    %td= Datum.all.count
+  
